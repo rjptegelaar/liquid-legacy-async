@@ -30,7 +30,7 @@ public class LiquidLegacyConsumer implements Runnable{
 	private long wait = 1000;
 	
 	public LiquidLegacyConsumer(LinkedBlockingQueue<Message> queue, Transport transport){
-		logger.info("Launching legacy consumer");
+		logger.info("Launching liquid legacy consumer" + queue.hashCode());
 		this.queue = queue;
 		this.transport = transport;
 	}

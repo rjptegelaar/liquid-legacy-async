@@ -29,7 +29,7 @@ public class LiquidLegacyTransport implements Transport{
 	private Transport transport;
 	private static final int QUEUE_SIZE = 10000;
 	private static final int THRESHOLD_SIZE = 500;
-	private LinkedBlockingQueue<Message> queue = new LinkedBlockingQueue<Message>(QUEUE_SIZE);
+	private final LinkedBlockingQueue<Message> queue = new LinkedBlockingQueue<Message>(QUEUE_SIZE);
 	private LiquidLegacyConsumer consumer;
 	private LiquidLegacyProducer producer;
 	

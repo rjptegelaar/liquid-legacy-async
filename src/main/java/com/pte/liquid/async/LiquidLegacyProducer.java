@@ -27,7 +27,7 @@ public class LiquidLegacyProducer{
 	private int threasHold;
  
 	public LiquidLegacyProducer(LinkedBlockingQueue<Message> queue, int threashHold){
-		logger.info("Launching legacy producer");
+		logger.info("Launching legacy producer" + queue.hashCode());
 		this.queue = queue;
 		this.threasHold = threashHold;
 	}
