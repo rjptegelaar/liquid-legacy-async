@@ -40,7 +40,7 @@ public class LiquidLegacyTransport implements Transport{
 		new Thread(consumer).start();
 	}
 
-	public void send(Message msg) throws RelayException {
+	public synchronized void send(Message msg) throws RelayException {
 		producer.procesMessage(msg);
 	}
 
