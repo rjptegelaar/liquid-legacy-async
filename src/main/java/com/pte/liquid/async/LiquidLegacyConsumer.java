@@ -62,7 +62,8 @@ public class LiquidLegacyConsumer implements Runnable{
 			
 			
 			
-		}		
+		}	
+		logger.info("Breaking the habit.");
 	}
 
 	
