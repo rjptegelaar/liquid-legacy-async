@@ -9,7 +9,7 @@
 	<parent>
 		<groupId>com.pte.liquid.relay</groupId>
 		<artifactId>liquid-parent</artifactId>
-		<version>0.0.3</version>
+		<version>0.0.4</version>
 	</parent>
 	<scm>
 		<connection>scm:git:https://github.com/rjptegelaar/liquid-legacy-async.git</connection>
@@ -72,16 +72,15 @@
 		<dependency>
 			<groupId>com.pte.liquid.relay</groupId>
 			<artifactId>RelayApi</artifactId>
-			<version>0.1.4</version>
+			<version>0.1.5</version>
 		</dependency>
 	</dependencies>
 
 
 	<distributionManagement>
 		<repository>
-			<id>pte-releases</id>
-			<name>internal releases</name>
-			<url>${releases-url}</url>
+			<id>bintray</id>
+			<url>https://api.bintray.com/maven/paultegelaar/maven/liquid-legacy-async</url>
 		</repository>
 		<snapshotRepository>
 			<id>pte-snapshots</id>
@@ -89,4 +88,12 @@
 			<url>${snapshots-url}</url>
 		</snapshotRepository>
 	</distributionManagement>
+	
+		<url>https://github.com/rjptegelaar/liquid-legacy-async</url>
+	<issueManagement>
+		<url>https://github.com/rjptegelaar/liquid-legacy-async/issues</url>
+	</issueManagement>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
 </project>
