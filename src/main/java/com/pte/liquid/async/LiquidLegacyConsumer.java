@@ -24,13 +24,11 @@ import com.pte.liquid.relay.model.Message;
 public class LiquidLegacyConsumer implements Runnable{
 
 	private boolean keepRunning = true;
-	private final static Logger logger = Logger.getLogger(LiquidLegacyConsumer.class);
 	private LinkedBlockingQueue<Message> queue;	
 	private Transport transport;
 	private long wait = 1000;
 	
 	public LiquidLegacyConsumer(LinkedBlockingQueue<Message> queue, Transport transport){
-		logger.info("Launching liquid legacy consumer" + queue.hashCode());
 		this.queue = queue;
 		this.transport = transport;
 	}
@@ -51,19 +49,14 @@ public class LiquidLegacyConsumer implements Runnable{
 				}
 				Thread.sleep(wait);
 			} catch (InterruptedException e) {
-				if(logger.isDebugEnabled()){
-					e.printStackTrace();
-				}
+				//Do nothing
 			} catch (RelayException e) {
-				if(logger.isDebugEnabled()){
-					e.printStackTrace();
-				}			
+				//Do nothing	
 			}
 			
 			
 			
-		}	
-		logger.info("Breaking the habit.");
+		}			
 	}
 
 	

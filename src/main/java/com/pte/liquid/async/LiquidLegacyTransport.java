@@ -24,8 +24,7 @@ import com.pte.liquid.relay.exception.RelayException;
 import com.pte.liquid.relay.model.Message;
 
 public class LiquidLegacyTransport implements Transport{
-	
-	private final static Logger logger = Logger.getLogger(LiquidLegacyTransport.class);
+		
 	private Transport transport;
 	private static final int QUEUE_SIZE = 10000;
 	private static final int THRESHOLD_SIZE = 500;
@@ -53,7 +52,6 @@ public class LiquidLegacyTransport implements Transport{
 	}
 
 	public void destroy() {
-		logger.warn("Destroying legacy transport");
 		consumer.destroy();		
 	}
 	

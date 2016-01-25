@@ -22,12 +22,10 @@ import com.pte.liquid.relay.model.Message;
 
 public class LiquidLegacyProducer{
 	
-	private final static Logger logger = Logger.getLogger(LiquidLegacyProducer.class);
 	private LinkedBlockingQueue<Message> queue;
 	private int threasHold;
  
-	public LiquidLegacyProducer(LinkedBlockingQueue<Message> queue, int threashHold){
-		logger.info("Launching legacy producer" + queue.hashCode());
+	public LiquidLegacyProducer(LinkedBlockingQueue<Message> queue, int threashHold){		
 		this.queue = queue;
 		this.threasHold = threashHold;
 	}
@@ -35,7 +33,7 @@ public class LiquidLegacyProducer{
 	public void procesMessage(Message message) throws RelayException{
 		try {
 			if(queue.remainingCapacity() <= threasHold){
-				logger.warn("Dropping message, threashold reached.");
+				//Dump message
 			}else{
 				queue.put(message);
 			}						
