@@ -38,12 +38,9 @@ public class LiquidLegacyConsumer implements Runnable{
 	public void run() {
 		while(keepRunning){
 			try {
-				while(keepRunning && !queue.isEmpty()){
-					Message message = queue.poll();	
-					
-					if(message != null){
-						transport.send(message);					
-					}							
+				Message message = null;
+				while(keepRunning && (message = queue.poll())!=null){								
+					transport.send(message);																	
 				}
 				Thread.sleep(wait);
 			} catch (InterruptedException e) {
