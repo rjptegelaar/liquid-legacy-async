@@ -71,8 +71,8 @@
 		<!-- LIQUID -->
 		<dependency>
 			<groupId>com.pte.liquid.relay</groupId>
-			<artifactId>RelayApi</artifactId>
-			<version>0.1.5</version>
+			<artifactId>RelayInterfaces</artifactId>
+			<version>0.1.11</version>
 		</dependency>
 	</dependencies>
 
