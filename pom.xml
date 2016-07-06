@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.pte.liquid.relay</groupId>
 	<artifactId>liquid-legacy-async</artifactId>
-	<version>0.0.3-SNAPSHOT</version>
+	<version>0.0.3</version>
 	<name>liquid-legacy-async</name>
 	<description>Simple async helper for java 6 and earlier</description>
 
@@ -15,7 +15,7 @@
 		<connection>scm:git:https://github.com/rjptegelaar/liquid-legacy-async.git</connection>
 		<developerConnection>scm:git:git@github.com:rjptegelaar/liquid-legacy-async.git</developerConnection>
 		<url>https://github.com/rjptegelaar/liquid-legacy-async.git</url>
-    <tag>HEAD</tag>
+    <tag>liquid-legacy-async-0.0.3</tag>
   </scm>  
 	<build>
 		<plugins>
