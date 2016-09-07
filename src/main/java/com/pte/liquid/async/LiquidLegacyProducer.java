@@ -14,15 +14,14 @@
 package com.pte.liquid.async;
 
 import java.util.concurrent.LinkedBlockingQueue;
-
-import org.apache.log4j.Logger;
+import java.util.logging.Logger;
 
 import com.pte.liquid.relay.exception.RelayException;
 import com.pte.liquid.relay.model.Message;
 
 public class LiquidLegacyProducer{
 	
-	private final static Logger logger = Logger.getLogger(LiquidLegacyProducer.class);
+	private final static Logger logger = Logger.getLogger("LiquidLegacyProducer");
 	
 	private LinkedBlockingQueue<Message> queue;
 	private int threasHold;
@@ -35,7 +34,7 @@ public class LiquidLegacyProducer{
 	public void procesMessage(Message message) throws RelayException{
 		try {
 			if(queue.remainingCapacity() <= threasHold){
-				logger.warn("Threashold reached, dumping logging message because volume is to high.");
+				logger.warning("Threashold reached, dumping logging message because volume is to high.");
 			}else{
 				queue.put(message);
 			}						
