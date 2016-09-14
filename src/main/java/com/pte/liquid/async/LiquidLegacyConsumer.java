@@ -33,6 +33,7 @@ public class LiquidLegacyConsumer implements Runnable{
 	
 	public void destroy(){
 		keepRunning = false;
+		transport.destroy();
 	}
 
 	public void run() {
@@ -44,9 +45,9 @@ public class LiquidLegacyConsumer implements Runnable{
 				}
 				Thread.sleep(wait);
 			} catch (InterruptedException e) {
-				//Do nothing
+				transport.destroy();
 			} catch (RelayException e) {
-				//Do nothing	
+				transport.destroy();
 			}
 			
 			
