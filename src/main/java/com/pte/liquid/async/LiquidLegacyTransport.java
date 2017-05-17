@@ -24,8 +24,8 @@ import com.pte.liquid.relay.model.Message;
 public class LiquidLegacyTransport implements Transport{
 		
 	private Transport transport;
-	private static final int QUEUE_SIZE = 10000;
-	private static final int THRESHOLD_SIZE = 500;
+	private static final int QUEUE_SIZE = 100;
+	private static final int THRESHOLD_SIZE = 10;
 	private final LinkedBlockingQueue<Message> queue = new LinkedBlockingQueue<Message>(QUEUE_SIZE);
 	private LiquidLegacyConsumer consumer;
 	private LiquidLegacyProducer producer;
