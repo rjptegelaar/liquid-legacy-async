@@ -15,6 +15,7 @@ package com.pte.liquid.async;
 
 import java.util.Properties;
 import java.util.concurrent.LinkedBlockingQueue;
+import java.util.logging.Logger;
 
 import com.pte.liquid.relay.Marshaller;
 import com.pte.liquid.relay.Transport;
@@ -23,6 +24,7 @@ import com.pte.liquid.relay.model.Message;
 
 public class LiquidLegacyTransport implements Transport{
 		
+	private final static Logger logger = Logger.getLogger("LiquidLegacyTransport");
 	private Transport transport;
 	private static final int QUEUE_SIZE = 100;
 	private static final int THRESHOLD_SIZE = 10;
@@ -31,6 +33,7 @@ public class LiquidLegacyTransport implements Transport{
 	private LiquidLegacyProducer producer;
 	
 	public LiquidLegacyTransport(Transport transport){
+		logger.info("Creating new async transport");
 		this.transport = transport;
 		consumer = new LiquidLegacyConsumer(queue, transport);
 		producer = new LiquidLegacyProducer(queue, THRESHOLD_SIZE);

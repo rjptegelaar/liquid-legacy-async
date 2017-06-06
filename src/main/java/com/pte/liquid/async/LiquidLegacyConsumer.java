@@ -14,19 +14,21 @@
 package com.pte.liquid.async;
 
 import java.util.concurrent.LinkedBlockingQueue;
+import java.util.logging.Logger;
 
 import com.pte.liquid.relay.Transport;
 import com.pte.liquid.relay.exception.RelayException;
 import com.pte.liquid.relay.model.Message;
 
 public class LiquidLegacyConsumer implements Runnable{
-
+	private final static Logger logger = Logger.getLogger("LiquidLegacyConsumer");
 	private boolean keepRunning = true;
 	private LinkedBlockingQueue<Message> queue;	
 	private Transport transport;
 	private long wait = 1000;
 	
 	public LiquidLegacyConsumer(LinkedBlockingQueue<Message> queue, Transport transport){
+		logger.info("Creating new async consumer");
 		this.queue = queue;
 		this.transport = transport;
 	}

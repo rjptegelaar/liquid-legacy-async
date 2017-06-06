@@ -27,6 +27,7 @@ public class LiquidLegacyProducer{
 	private int threasHold;
  
 	public LiquidLegacyProducer(LinkedBlockingQueue<Message> queue, int threashHold){		
+		logger.info("Creating new async producer");
 		this.queue = queue;
 		this.threasHold = threashHold;
 	}
