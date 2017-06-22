@@ -26,9 +26,9 @@ public class LiquidLegacyTransport implements Transport{
 		
 	private final static Logger logger = Logger.getLogger("LiquidLegacyTransport");
 	private Transport transport;
-	private static final int QUEUE_SIZE = 100;
-	private static final int THRESHOLD_SIZE = 10;
-	private final LinkedBlockingQueue<Message> queue = new LinkedBlockingQueue<Message>(QUEUE_SIZE);
+	private int queueSize = 1000;
+	private int threshholdSize = 100;
+	private final LinkedBlockingQueue<Message> queue = new LinkedBlockingQueue<Message>(queueSize);
 	private LiquidLegacyConsumer consumer;
 	private LiquidLegacyProducer producer;
 	
@@ -36,7 +36,7 @@ public class LiquidLegacyTransport implements Transport{
 		logger.info("Creating new async transport");
 		this.transport = transport;
 		consumer = new LiquidLegacyConsumer(queue, transport);
-		producer = new LiquidLegacyProducer(queue, THRESHOLD_SIZE);
+		producer = new LiquidLegacyProducer(queue, threshholdSize);
 		new Thread(consumer).start();
 	}
 
@@ -55,6 +55,24 @@ public class LiquidLegacyTransport implements Transport{
 	public void destroy() {
 		consumer.destroy();		
 	}
+
+	public int getQueueSize() {
+		return queueSize;
+	}
+
+	public void setQueueSize(int queueSize) {
+		this.queueSize = queueSize;
+	}
+
+	public int getThreshholdSize() {
+		return threshholdSize;
+	}
+
+	public void setThreshholdSize(int threshholdSize) {
+		this.threshholdSize = threshholdSize;
+	}
+	
+	
 	
 	
 	
